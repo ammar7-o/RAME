@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+        body {
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .card {
+            width: 250px;
+            height: 300px;
+            background-color: white;
+            text-align: center;
+            font-family: "Poetsen One", sans-serif;
+            border-radius: 7px;
+            transition: all 0.5s;
+            margin-right: 40px;
+border: 1px solid black;
+        }
+
+        .card img {
+            width: 95%;
+            border-radius: 7px;
+            height: 75%;
+        }
+.card h2{
+    letter-spacing: 3px;
+}
+        .card:hover {
+            transform: scale(1.04);
+            box-shadow: 1px 2px 3px 2px rgb(155, 155, 155);
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div  onclick="redirectToPageInNewTab('/RAME/learn/html.html')" class="card">
+        <h2>HTML</h2>
+        <img src="https://play-lh.googleusercontent.com/MPDzYIvnXkFgILeyVYa1ZrBhWrQI6voJQ83R3TGhUvU4jjcV3ClQVlhuWDucmSkSwqc=w240-h480-rw"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('/RAME/learn/css.html')" class="card">
+        <h2>CSS</h2>
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/css3-logo-svg-vector.svg"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('/RAME/learn/js.html')" class="card">
+        <h2>JAVASCRIPT</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpuYdLEzBvwemix8pwsncUkLLOQqnByncadg&s"
+            alt="">
+    </div>
+
+
+
+
+    <script>
+        function redirectToPageInNewTab(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
