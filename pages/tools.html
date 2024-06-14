@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+        body {
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 250px;
+            height: 300px;
+            background-color: white;
+            text-align: center;
+            font-family: "Poetsen One", sans-serif;
+            border-radius: 7px;
+            transition: all 0.5s;
+            margin-right: 40px;
+            border: 1px solid black;
+
+        }
+
+        .card img {
+            width: 95%;
+            border-radius: 7px;
+            height: 75%;
+            margin: 0;
+        }
+.card h2{
+    letter-spacing: 3px;
+}
+        .card:hover {
+            transform: scale(1.04);
+            box-shadow: 1px 2px 3px 2px rgb(155, 155, 155);
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div   onclick="redirectToPageInNewTab('/RAME/pages/ai.html')" class="card">
+        <h2>AI</h2>
+        <img src="/RAME/img/10946073.jpg"
+            alt="">
+            
+    </div>
+
+    <div  onclick="redirectToPageInNewTab('/RAME/pages/montage.html')" class="card">
+        <h2>MONTAGE</h2>
+        <img src="/RAME/img/montage-video-480x320.jpg"
+            alt="">
+    </div>
+
+    <div  onclick="redirectToPageInNewTab('/RAME/pages/sites.html')" class="card">
+        <h2>SITES</h2>
+        <img src="/RAME/img/10946073.jpg"
+            alt="">
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function redirectToPageInNewTab(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
