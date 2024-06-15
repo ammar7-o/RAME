@@ -18,6 +18,8 @@
 
     body {
       background-color: white;
+      width: 100%;
+      height: 100%;
     }
 
     h2 {
@@ -54,19 +56,64 @@
       }
     }
     ::-webkit-scrollbar{
-    width: 0px;
+    width: 20px;
 }
+.search{
+  width: 100%;
+  position: fixed;
+  padding: 20px;
+
+}
+
     h1 {
       color: white;
       background-color: #000000;
     }
+    .search{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+position: fixed;
+z-index: 7;
+    }
+    #fix{
+      position: fixed;
+      width: 100%;
+    }
+    input[type=text] {
+            width: 85%;
+            background-color: rgb(49, 49, 49);
+            border-radius: 7px;
+            border: 1px solid blue;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: sans-serif;
+font-weight: bolder;
+letter-spacing: 1px;
+border-radius: 4px;
+
+        }
+        button::placeholder{
+          color: aliceblue;
+        }
   </style>
 </head>
 
 <body>
-  <h1>HOME</h1>
-  <hr>
+  <h1 id="fix">HOME</h1>
   <br>
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search..." />
+    <button id="searchButton">Search</button>
+  </div>
+  <br><br><br><br><br>
   <h2>GOOGLE</h2>
   <div class="container">
     <a target="_blank" href="https://drive.google.com/drive/my-drive"><span><img
@@ -106,6 +153,42 @@
     <a target="_blank" href="https://webflow.com/"><span><img src=""></span>webflow</a>
     <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>copilot</a>
   </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Sample data for suggestions
+
+    // Function to handle autocomplete suggestions
+    function showSuggestions() {
+        var input = $("#searchInput").val().toLowerCase();
+        var matches = suggestions.filter(function(suggestion) {
+            return suggestion.toLowerCase().startsWith(input);
+        });
+
+        var suggestionsList = $("#suggestions");
+        suggestionsList.empty();
+
+        matches.forEach(function(match) {
+            var li = $("<li>").text(match).click(function() {
+                $("#searchInput").val(match);
+                suggestionsList.hide();
+            });
+            suggestionsList.append(li);
+        });
+
+    }
+
+    // Handle input event for autocomplete
+    $("#searchInput").on("input", showSuggestions);
+
+    // Handle search button click
+    $("#searchButton").click(function() {
+        var searchTerm = $("#searchInput").val();
+        var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+        window.open(googleSearchUrl, "_blank");
+    });
+</script>
 </body>
 
 </html>
