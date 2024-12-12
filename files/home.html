@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: "Poetsen One", sans-serif;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      user-select: none;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 10px;
+
+      a {
+        width: 270px;
+        height: 50px;
+        background-color: rgb(189, 189, 189);
+        text-decoration: none;
+        font-size: 30px;
+        font-family: "Poetsen One", sans-serif;
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      a:hover {
+          transform: scale(1.03);
+        }
+      img {
+        width: 30px;
+      }
+    }
+    ::-webkit-scrollbar{
+    width: 20px;
+}
+.search{
+  width: 100%;
+  position: fixed;
+  padding: 20px;
+
+}
+
+    h1 {
+      color: white;
+      background-color: #000000;
+    }
+    .search{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+position: fixed;
+z-index: 7;
+    }
+    #fix{
+      position: fixed;
+      width: 100%;
+    }
+    input[type=text] {
+            width: 85%;
+            background-color: rgb(49, 49, 49);
+            border-radius: 7px;
+            border: 1px solid blue;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: sans-serif;
+font-weight: bolder;
+letter-spacing: 1px;
+border-radius: 4px;
+
+        }
+        button::placeholder{
+          color: aliceblue;
+        }
+        h2{
+            color: white;
+            letter-spacing: 2px;
+        }
+        ::-webkit-scrollbar {
+            width: 20px;
+            background-color: white;
+            color: black;
+        }
+      
+        ::-webkit-scrollbar-thumb{
+            background-color: black;
+
+        }
+  </style>
+</head>
+
+<body>
+ 
+  <br>
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search..." />
+    <button id="searchButton">Search</button>
+  </div>
+  <br><br><br><br><br>
+  <h2>GOOGLE</h2>
+  <div class="container">
+    <a target="_blank" href="https://drive.google.com/drive/my-drive"><span><img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png"></span>DRIVE</a>
+    <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"><span><img
+          src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png"></span>gmail</a>
+    <a target="_blank" href="https://translate.google.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png"></span>translate</a>
+    <a target="_blank" href="https://www.blogger.com"><span><img src="https://cdn.freebiesupply.com/images/large/2x/blogger-logo-transparent.png"></span>blogger</a>
+    <a target="_blank" href="https://www.youtube.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></span>youtube</a>
+    <a target="_blank" href="https://keep.google.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png"></span>keep</a>
+    <a target="_blank" href="https://www.office.com/?auth=1"><span><img src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png" alt=""></span>Office</a>
+    <a target="_blank" href="https://photos.google.com/"><span><img
+          src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png" ></span>photos</a>
+  </div>
+
+  <h2>MONTAGE</h2>
+  <div class="container">
+    <a target="_blank" href="https://www.canva.com/"><span><img src=""></span>canva</a>
+    <a target="_blank" href="https://www.photopea.com/?utm_source=homescreen"><span><img src=""></span>photopea</a>
+    <a target="_blank" href="https://clipchamp.com/en/"><span><img src=""></span>clipchamp</a>
+  </div>
+
+
+  <h2>MEDIA</h2>
+  <div class="container">
+    <a target="_blank" href="https://www.freepik.com/"><span><img src=""></span>freepik</a>
+    <a target="_blank" href="https://pixabay.com/"><span><img src=""></span>pixabay</a>
+    <a target="_blank" href="https://mixkit.co/"><span><img src=""></span>mixkit</a>
+    <a target="_blank" href="https://www.pexels.com/"><span><img src=""></span>pexels</a>
+    <a target="_blank" href="https://www.flaticon.com/"><span><img src=""></span>flaticon</a>
+
+  </div>
+
+  <h2>TOOLS</h2>
+  <div class="container">
+    <a target="_blank" href="https://github.com/"><span><img src=""></span>github</a>
+    <a target="_blank" href="https://webflow.com/"><span><img src=""></span>webflow</a>
+    <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>copilot</a>
+  </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Sample data for suggestions
+
+    // Function to handle autocomplete suggestions
+    function showSuggestions() {
+        var input = $("#searchInput").val().toLowerCase();
+        var matches = suggestions.filter(function(suggestion) {
+            return suggestion.toLowerCase().startsWith(input);
+        });
+
+        var suggestionsList = $("#suggestions");
+        suggestionsList.empty();
+
+        matches.forEach(function(match) {
+            var li = $("<li>").text(match).click(function() {
+                $("#searchInput").val(match);
+                suggestionsList.hide();
+            });
+            suggestionsList.append(li);
+        });
+
+    }
+
+    // Handle input event for autocomplete
+    $("#searchInput").on("input", showSuggestions);
+
+    // Handle search button click
+    $("#searchButton").click(function() {
+        var searchTerm = $("#searchInput").val();
+        var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+        window.open(googleSearchUrl, "_blank");
+    });
+</script>
+</body>
+
+</html>

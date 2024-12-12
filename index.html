@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hres">
+        <h2 style="color: white;">DRAWER</h2>
+    </div>
+    <header class="no-select">
+        <a class="logo" href=""><img src=""></a>
+        <nav>
+            <a href="">ABOUT</a>
+            <a id="settings" href="#">Settings</a>
+            <a href="">my projects</a>
+        </nav>
+    </header>
+    <div class="settings no-select">
+        <img id="close" src="./imgs/close.png">
+        <br>
+        <h2>colors</h2>
+        <span class="colors">random</span>
+        <span class="light">LIGHT MODE</span>
+        <span class="rest">Rest</span>
+    </div>
+    <section>
+        <div class="res">
+            <a href="#">HOME</a>
+            <a href="#">lEARN</a>
+            <a href="#">TOOLS</a>
+            <a href="#">MY SHORTS</a>
+            <a href="#">chating</a>
+            <a href="#">TEXT Editor</a>
+            <a href="#">NOTE</a>
+        </div>
+        <div id="side" class="side-bar no-select">
+            <div id="btn" class="btn"><img src="./imgs/file.png"></div>
+            <a onclick="go('./files/home.html')" href="#">HOME</a>
+            <a onclick="go('./files/learn.html')" href="#">lEARN</a>
+            <a onclick="go('./files/tools.html')" href="#">TOOLS</a>
+            <a onclick="go('./files/shorts.html')" href="#">MY SHORTS</a>
+            <a onclick="go('./files/chat.html')" href="#">chating</a>
+            <a onclick="go('./Rich-text-editor-master/index.html')" href="#">TEXT Editor</a>
+            <a onclick="go('./files/note.html')" href="#">NOTE</a>
+
+        </div>
+        <div class="frame">
+            <iframe src="./files/home.html" id="frame" frameborder="0"></iframe>
+        </div>
+    </section>
+</body>
+<script src="app.js"></script>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+        body {
+            display: flex;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+user-select: none;
+        }
+
+        .card {
+            width: 250px;
+            height: 300px;
+            background-color: white;
+            text-align: center;
+            font-family: "Poetsen One", sans-serif;
+            border-radius: 7px;
+            transition: all 0.5s;
+            margin-right: 40px;
+border: 1px solid black;
+        }
+
+        .card img {
+            width: 95%;
+            border-radius: 7px;
+            height: 75%;
+        }
+.card h2{
+    letter-spacing: 3px;
+}
+        .card:hover {
+            transform: scale(1.04);
+            box-shadow: 1px 2px 3px 2px rgb(155, 155, 155);
+        }
+
+        ::-webkit-scrollbar {
+            width: 20px;
+            background-color: white;
+            color: black;
+        }
+      
+        ::-webkit-scrollbar-thumb{
+            background-color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/html.html')" class="card">
+        <h2>HTML</h2>
+        <img src="../imgs/html.webp"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/css.html')" class="card">
+        <h2>CSS</h2>
+        <img src="../imgs/css.svg"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/js.html')" class="card">
+        <h2>JAVASCRIPT</h2>
+        <img src="../imgs/js.png"
+            alt="">
+    </div>
+
+
+
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/cs50.html')" class="card">
+        <h2>CS50</h2>
+        <img src="../imgs/cs50.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/react.html')" class="card">
+        <h2>React-js</h2>
+        <img src="../imgs/react.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/node.html')" class="card">
+        <h2>Node-js</h2>
+        <img src="../imgs/node.png"
+            alt="">
+    </div>
+
+
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/git-githup.html')" class="card">
+        <h2>git-githup</h2>
+        <img src="../imgs/git githup.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/python.html')" class="card">
+        <h2>python</h2>
+        <img src="../imgs/pythonwebp.webp"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/figma.html')" class="card">
+        <h2>Figma</h2>
+        <img  style="width: 70%; height: 70%;" src="../imgs/figma.png"
+            alt="">
+    </div>
+
+
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/scratch.html')" class="card">
+        <h2>Scratch</h2>
+        <img src="../imgs/scratch.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/photoshop.html')" class="card">
+        <h2>photoshop</h2>
+        <img src="../imgs/photoshop.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/english.html')" class="card">
+        <h2>ENGLISH</h2>
+        <img src="../imgs/english.png"
+            alt="">
+    </div>
+    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/francais.html')" class="card">
+        <h2>FRENCH</h2>
+        <img src="../imgs/flag_of_france.png"
+            alt="">
+    </div>
+
+    <script>
+        function redirectToPageInNewTab(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>

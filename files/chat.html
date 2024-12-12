@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض وإرسال رسائل تيليجرام</title>
+    <style>
+        /* نفس التنسيقات الموجودة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            direction: rtl; /* جعل الاتجاه من اليمين لليسار */
+        }
+        h1 {
+            text-align: center;
+            color: #4A90E2;
+        }
+        #messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #e9ecef;
+            transition: background-color 0.3s;
+        }
+        .message:hover {
+            background-color: #d1d8de;
+        }
+        .message .sender {
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        .message .timestamp {
+            font-size: 0.85em;
+            color: #777;
+            text-align: left;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 70%;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        @media (max-width: 600px) {
+            form {
+                flex-direction: column;
+            }
+            input[type="text"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>إرسال وعرض رسائل<span><a style="text-decoration: none; color: indigo;" target="_blank" href="https://t.me/Khshsubot">-masge</a></span></h1>
+    <div id="messages"></div>
+    
+    <form id="messageForm">
+        <input type="text" id="message" name="message" placeholder="أدخل رسالتك هنا..." required>
+        <button type="submit">إرسال</button>
+    </form>
+
+    <script>
+        const token = '7382062674:AAG5FZO2v65BZTI8I-coABzCBC13X_iNfDU'; // أدخل التوكن الخاص بك هنا
+        const chatId = '5791764163'; // أدخل معرف الدردشة الخاص بك هنا
+        let lastUpdateId = 0; // متغير لتخزين آخر معرف تحديث
+
+        // تنسيق الطابع الزمني
+        function formatTimestamp(timestamp) {
+            const date = new Date(timestamp * 1000);
+            const options = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour12: false,
+            };
+            return date.toLocaleString('en-US', options);
+        }
+    
+
+        // جلب الرسائل
+        function fetchMessages() {
+            const url = `https://api.telegram.org/bot${token}/getUpdates?offset=${lastUpdateId + 1}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const messagesDiv = document.getElementById('messages');
+                    data.result.forEach(update => {
+                        if (update.message && update.message.text) {
+                            const message = document.createElement('div');
+                            message.classList.add('message');
+                            const timestamp = formatTimestamp(update.message.date);
+                            message.innerHTML = `
+                                <div class="sender">رسالة من ${update.message.from.first_name}:</div>
+                                <div>${update.message.text}</div>
+                                <div class="timestamp">${timestamp}</div>
+                            `;
+                            messagesDiv.appendChild(message);
+                            lastUpdateId = update.update_id;
+                        }
+                    });
+                })
+                .catch(error => console.error('خطأ في جلب الرسائل:', error));
+        }
+
+        // إرسال رسالة
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value.trim();
+            if (message === "") {
+                alert("يرجى كتابة رسالة قبل الإرسال!");
+                return;
+            }
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+            // عرض الرسالة المرسلة في الصفحة
+            const messagesDiv = document.getElementById('messages');
+            const sentMessage = document.createElement('div');
+            sentMessage.classList.add('message');
+            sentMessage.innerHTML = `
+                <div class="sender">رسالتك:</div>
+                <div>${message}</div>
+                <div class="timestamp">${formatTimestamp(Math.floor(Date.now() / 1000))}</div>
+            `;
+            messagesDiv.appendChild(sentMessage);
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('تم إرسال الرسالة:', data);
+                    document.getElementById('message').value = '';
+                    fetchMessages();
+                })
+                .catch(error => console.error('خطأ في إرسال الرسالة:', error));
+        });
+
+        // تحديث الرسائل كل 5 ثوانٍ
+        setInterval(fetchMessages, 5000);
+    </script>
+</body>
+</html>
