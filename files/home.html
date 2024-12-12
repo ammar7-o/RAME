@@ -47,81 +47,98 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 7px;
       }
+
       a:hover {
-          transform: scale(1.03);
-        }
+        transform: scale(1.03);
+        border: white 2px solid ;
+      }
+
       img {
         width: 30px;
       }
     }
-    ::-webkit-scrollbar{
-    width: 20px;
-}
-.search{
-  width: 100%;
-  position: fixed;
-  padding: 20px;
 
-}
+    ::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    .search {
+      width: 100%;
+      position: fixed;
+      padding: 20px;
+
+    }
 
     h1 {
       color: white;
       background-color: #000000;
     }
-    .search{
+
+    .search {
       display: flex;
       justify-content: center;
       align-items: center;
-position: fixed;
-z-index: 7;
+      position: fixed;
+      z-index: 7;
     }
-    #fix{
+
+    #fix {
       position: fixed;
       width: 100%;
     }
+
     input[type=text] {
-            width: 85%;
-            background-color: rgb(49, 49, 49);
-            border-radius: 7px;
-            border: 1px solid blue;
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            font-family: sans-serif;
-        }
-        
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            font-family: sans-serif;
-font-weight: bolder;
-letter-spacing: 1px;
-border-radius: 4px;
+      width: 85%;
+      background-color: rgb(49, 49, 49);
+      border-radius: 7px;
+      border: 1px solid blue;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      font-family: sans-serif;
+    }
 
-        }
-        button::placeholder{
-          color: aliceblue;
-        }
-        h2{
-            color: white;
-            letter-spacing: 2px;
-        }
-        ::-webkit-scrollbar {
-            width: 20px;
-            background-color: white;
-            color: black;
-        }
-      
-        ::-webkit-scrollbar-thumb{
-            background-color: black;
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: sans-serif;
+      font-weight: bolder;
+      letter-spacing: 1px;
+      border-radius: 4px;
 
-        }
+    }
+
+    button::placeholder {
+      color: aliceblue;
+    }
+
+    h2 {
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 20px;
+      background-color: white;
+      color: black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: black;
+
+    }
+    @media (max-width: 1000px) {
+      h2{
+        color: black;
+      }
+    }
   </style>
 </head>
 
 <body>
- 
+
   <br>
   <div class="search">
     <input type="text" id="searchInput" placeholder="Search..." />
@@ -134,22 +151,55 @@ border-radius: 4px;
           src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png"></span>DRIVE</a>
     <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"><span><img
           src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png"></span>gmail</a>
-    <a target="_blank" href="https://translate.google.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png"></span>translate</a>
-    <a target="_blank" href="https://www.blogger.com"><span><img src="https://cdn.freebiesupply.com/images/large/2x/blogger-logo-transparent.png"></span>blogger</a>
-    <a target="_blank" href="https://www.youtube.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></span>youtube</a>
-    <a target="_blank" href="https://keep.google.com/"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png"></span>keep</a>
-    <a target="_blank" href="https://www.office.com/?auth=1"><span><img src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png" alt=""></span>Office</a>
+    <a target="_blank" href="https://translate.google.com/"><span><img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png"></span>translate</a>
+    <a target="_blank" href="https://www.blogger.com"><span><img
+          src="https://cdn.freebiesupply.com/images/large/2x/blogger-logo-transparent.png"></span>blogger</a>
+    <a target="_blank" href="https://www.youtube.com/"><span><img
+          src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></span>youtube</a>
+    <a target="_blank" href="https://keep.google.com/"><span><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png"></span>keep</a>
+    <a target="_blank" href="https://www.office.com/?auth=1"><span><img
+          src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png" alt=""></span>Office</a>
     <a target="_blank" href="https://photos.google.com/"><span><img
-          src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png" ></span>photos</a>
+          src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png"></span>photos</a>
+    <a target="_blank" href="https://sites.google.com/u/0/new?pli=1&authuser=0"><span><img src=""></span>SITES</a>
+    <a target="_blank" href="https://gemini.google.com/u/1/app"><span><img src=""></span>Gemini</a>
+    <a target="_blank" href="https://about.google/products/#all-products"><span><img src=""></span>MORE</a>
+
+
   </div>
+
 
   <h2>MONTAGE</h2>
   <div class="container">
     <a target="_blank" href="https://www.canva.com/"><span><img src=""></span>canva</a>
     <a target="_blank" href="https://www.photopea.com/?utm_source=homescreen"><span><img src=""></span>photopea</a>
     <a target="_blank" href="https://clipchamp.com/en/"><span><img src=""></span>clipchamp</a>
+    <a target="_blank" href="https://app.simplified.com/video"><span><img src=""></span>simplified</a>
+    <a target="_blank" href="https://bith.tv/ai-studio/videos"><span><img src=""></span>Bith</a>
+
+
   </div>
 
+  <h2>AI</h2>
+  <div class="container">
+    <a target="_blank" href="https://chatgpt.com/"><span><img src=""></span>chatgpt</a>
+    <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>Copilot</a>
+    <a target="_blank" href="https://app.leonardo.ai/"><span><img src=""></span>leonardo</a>
+    <a target="_blank" href="https://haiper.ai/creations"><span><img src=""></span>Haiper</a>
+    <a target="_blank" href="https://www.stablevideo.com/generate/"><span><img src=""></span>stablevideo</a>
+    <a target="_blank" href="https://perchance.org/ai-text-to-image-generator"><span><img src=""></span>perchance</a>
+    <a target="_blank" href="https://elevenlabs.io/"><span><img src=""></span>elevenlabs</a>
+
+  </div>
+
+  <h2>UI-UX</h2>
+  <div class="container">
+    <a target="_blank"
+      href="https://www.figma.com/board/BW0VwPe6OGDlUWL9GNjFBK/Untitled?node-id=1-80&node-type=shape_with_text&t=EHKG5UZX8UOendJp-0"><span><img
+          src=""></span>Figma</a>
+  </div>
 
   <h2>MEDIA</h2>
   <div class="container">
@@ -158,6 +208,7 @@ border-radius: 4px;
     <a target="_blank" href="https://mixkit.co/"><span><img src=""></span>mixkit</a>
     <a target="_blank" href="https://www.pexels.com/"><span><img src=""></span>pexels</a>
     <a target="_blank" href="https://www.flaticon.com/"><span><img src=""></span>flaticon</a>
+    <a target="_blank" href="https://www.pinterest.com/"><span><img src=""></span>pinterest</a>
 
   </div>
 
@@ -166,30 +217,60 @@ border-radius: 4px;
     <a target="_blank" href="https://github.com/"><span><img src=""></span>github</a>
     <a target="_blank" href="https://webflow.com/"><span><img src=""></span>webflow</a>
     <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>copilot</a>
-  </div>
-  
+    <a target="_blank" href="https://www.notion.so/f2ac02d7906e45f7b8d00f20720ab367"><span><img src=""></span>NOTION</a>
+    <a target="_blank" href="https://web.whatsapp.com/"><span><img src=""></span>whatsapp</a>
+    <a target="_blank" href="https://temp-mail.org/en/"><span><img src=""></span>Temp-mail</a>
+    <a target="_blank" href="https://ammar7-o.github.io/runer/"><span><img src=""></span>Code Editor</a>
+    <a target="_blank" href="https://www.virustotal.com/gui/home/upload"><span><img src=""></span>virustotal</a>
 
+  </div>
+
+  <h2>CSS</h2>
+  <div class="container">
+    <a target="_blank" href="https://markodenic.com/tools/buttons-generator/"><span><img src=""></span>Button
+      Generator</a>
+    <a target="_blank" href="https://neumorphism.io/#e0e0e0"><span><img src=""></span>neumorphism</a>
+    <a target="_blank" href="https://cssgrid-generator.netlify.app/"><span><img src=""></span>cssgrid-generator</a>
+    <a target="_blank" href="https://getwaves.io/"><span><img src=""></span>getwaves</a>
+    <a target="_blank" href="https://9elements.github.io/fancy-border-radius/#39.80.57.44--."><span><img
+          src=""></span>fancy</a>
+    <a target="_blank" href="https://css.glass/"><span><img src=""></span>css.glass</a>
+    <a target="_blank" href="https://animista.net/"><span><img src=""></span>animista</a>
+    <a target="_blank" href="https://www.buttons.cool/"><span><img src=""></span>buttons.cool</a>
+    <a target="_blank" href="https://colorhunt.co/"><span><img src=""></span>colorhunt</a>
+    <a target="_blank" href="https://codingartistweb.com/tools/gradient/"><span><img src=""></span>gradient</a>
+    <a target="_blank" href="https://arbfonts.com/top-arabic-fonts"><span><img src=""></span>Arab-fonts</a>
+
+  </div>
+
+  <h2>Education</h2>
+  <div class="container">
+    <a target="_blank" href="https://massarservice.men.gov.ma/moutamadris/Account"><span><img src=""></span>Massar</a>
+    <a target="_blank" href="https://www.alloschool.com/"><span><img src=""></span>alloschool</a>
+    <a target="_blank" href="https://www.edraak.org/"><span><img src=""></span>edraak</a>
+    <a target="_blank" href="https://www.coursat.org/"><span><img src=""></span>coursat</a>
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     // Sample data for suggestions
 
     // Function to handle autocomplete suggestions
     function showSuggestions() {
-        var input = $("#searchInput").val().toLowerCase();
-        var matches = suggestions.filter(function(suggestion) {
-            return suggestion.toLowerCase().startsWith(input);
-        });
+      var input = $("#searchInput").val().toLowerCase();
+      var matches = suggestions.filter(function (suggestion) {
+        return suggestion.toLowerCase().startsWith(input);
+      });
 
-        var suggestionsList = $("#suggestions");
-        suggestionsList.empty();
+      var suggestionsList = $("#suggestions");
+      suggestionsList.empty();
 
-        matches.forEach(function(match) {
-            var li = $("<li>").text(match).click(function() {
-                $("#searchInput").val(match);
-                suggestionsList.hide();
-            });
-            suggestionsList.append(li);
+      matches.forEach(function (match) {
+        var li = $("<li>").text(match).click(function () {
+          $("#searchInput").val(match);
+          suggestionsList.hide();
         });
+        suggestionsList.append(li);
+      });
 
     }
 
@@ -197,12 +278,12 @@ border-radius: 4px;
     $("#searchInput").on("input", showSuggestions);
 
     // Handle search button click
-    $("#searchButton").click(function() {
-        var searchTerm = $("#searchInput").val();
-        var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
-        window.open(googleSearchUrl, "_blank");
+    $("#searchButton").click(function () {
+      var searchTerm = $("#searchInput").val();
+      var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+      window.open(googleSearchUrl, "_blank");
     });
-</script>
+  </script>
 </body>
 
 </html>
