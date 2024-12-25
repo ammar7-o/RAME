@@ -140,11 +140,8 @@
 <body>
 
   <br>
-  <div class="search">
-    <input type="text" id="searchInput" placeholder="Search..." />
-    <button id="searchButton">Search</button>
-  </div>
-  <br><br><br><br><br>
+  
+  
   <h2>GOOGLE</h2>
   <div class="container">
     <a target="_blank" href="https://drive.google.com/drive/my-drive"><span><img
@@ -165,6 +162,7 @@
           src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png"></span>photos</a>
     <a target="_blank" href="https://sites.google.com/u/0/new?pli=1&authuser=0"><span><img src=""></span>SITES</a>
     <a target="_blank" href="https://gemini.google.com/u/1/app"><span><img src=""></span>Gemini</a>
+    <a target="_blank" href="https://calendar.google.com/calendar/u/0/r?pli=1"><span><img src=""></span>calendar</a>
     <a target="_blank" href="https://about.google/products/#all-products"><span><img src=""></span>MORE</a>
 
 
@@ -250,40 +248,7 @@
     <a target="_blank" href="https://www.edraak.org/"><span><img src=""></span>edraak</a>
     <a target="_blank" href="https://www.coursat.org/"><span><img src=""></span>coursat</a>
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    // Sample data for suggestions
-
-    // Function to handle autocomplete suggestions
-    function showSuggestions() {
-      var input = $("#searchInput").val().toLowerCase();
-      var matches = suggestions.filter(function (suggestion) {
-        return suggestion.toLowerCase().startsWith(input);
-      });
-
-      var suggestionsList = $("#suggestions");
-      suggestionsList.empty();
-
-      matches.forEach(function (match) {
-        var li = $("<li>").text(match).click(function () {
-          $("#searchInput").val(match);
-          suggestionsList.hide();
-        });
-        suggestionsList.append(li);
-      });
-
-    }
-
-    // Handle input event for autocomplete
-    $("#searchInput").on("input", showSuggestions);
-
-    // Handle search button click
-    $("#searchButton").click(function () {
-      var searchTerm = $("#searchInput").val();
-      var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
-      window.open(googleSearchUrl, "_blank");
-    });
-  </script>
+ 
 </body>
 
 </html>

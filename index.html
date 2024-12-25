@@ -14,6 +14,12 @@
     </div>
     <header class="no-select">
         <a class="logo" href=""><img src=""></a>
+
+        <form  class="search">
+            <input type="text" id="searchInput" placeholder="Search..." />
+            <button  id="searchButton">Search</button>
+        </form>
+
         <nav>
             <a href="">ABOUT</a>
             <a id="settings" href="#">Settings</a>
@@ -55,5 +61,38 @@
     </section>
 </body>
 <script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Sample data for suggestions
 
+  // Function to handle autocomplete suggestions
+  function showSuggestions() {
+    var input = $("#searchInput").val().toLowerCase();
+    var matches = suggestions.filter(function (suggestion) {
+      return suggestion.toLowerCase().startsWith(input);
+    });
+
+    var suggestionsList = $("#suggestions");
+    suggestionsList.empty();
+
+    matches.forEach(function (match) {
+      var li = $("<li>").text(match).click(function () {
+        $("#searchInput").val(match);
+        suggestionsList.hide();
+      });
+      suggestionsList.append(li);
+    });
+
+  }
+
+  // Handle input event for autocomplete
+  $("#searchInput").on("input", showSuggestions);
+
+  // Handle search button click
+  $("#searchButton").click(function () {
+    var searchTerm = $("#searchInput").val();
+    var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+    window.open(googleSearchUrl, "_blank");
+  });
+</script>
 </html>
