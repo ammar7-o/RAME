@@ -26,30 +26,27 @@
       <a onclick="go('./files/my project.html')" href="#">my projects</a>
     </nav>
   </header>
-  <div style="overflow-y: scroll;" class="settings no-select">
+
+  <div class="settings no-select">
     <img id="close" src="./imgs/close.png">
-    <br>
-    <span style="display: none;">
-      <h2>colors</h2>
-      <span class="colors">random</span>
-      <span class="rest">Rest</span>
-    </span>
-   
+    <!-- <br> -->
+
     <h1>Shortcuts</h1>
     <br>
-    <h3>h = home</h3>
-    <h3>w = WEBSITES</h3>
-    <h3>c = chat</h3>
-    <h3>b = background</h3>
-    <h3>n = note</h3>
-    <h3>l = learn</h3>
-    <h3>s = shorts</h3>
+    <h3>f11 = full screen</h3>
+    <h3>a + h = home</h3>
+    <h3>a + w = WEBSITES</h3>
+    <h3>a + c = chat</h3>
+    <h3>a + b = background</h3>
+    <h3>a + n = note</h3>
+    <h3>a + l = learn</h3>
+    <h3>a + s = shorts</h3>
   </div>
   <section>
     <div class="res">
       <a href="files/home.html">HOME</a>
       <a href="files/learn.html">lEARN</a>
-      <a href="files/shorts.html">MY SHORTS</a>
+      <a href="files/shorts.html">SHORTS</a>
       <a href="files/chat.html">chating</a>
       <a href="files/note.html">NOTE</a>
     </div>
@@ -104,29 +101,62 @@
     window.open(googleSearchUrl, "_blank");
   });
 
-  document.addEventListener("keydown", function (a) {
-    if (a.key === "w") {
-      window.location.href = "./files/home.html"
+  let isAPressed = false;
+
+  document.addEventListener("keydown", function (event) {
+    // Check if 'A' is pressed
+    if (event.key === "a" || event.key === "A") {
+      isAPressed = true;
+      console.log("A key pressed");
+      return; // Exit early to wait for the next key
     }
-    if (a.key === "c") {
-      window.location.href = "./files/chat.html"
+
+    // If 'A' is pressed, check for the second key
+    if (isAPressed) {
+      console.log("A +", event.key, "pressed");
+
+      // Prevent default behavior
+      event.preventDefault();
+
+      // Redirect based on the second key
+      switch (event.key.toLowerCase()) { // Use lowercase to make it case-insensitive
+        case "w":
+          window.location.href = "./files/home.html";
+          break;
+        case "c":
+          window.location.href = "./files/chat.html";
+          break;
+        case "l":
+          window.location.href = "./files/learn.html";
+          break;
+        case "n":
+          window.location.href = "./files/note.html";
+          break;
+        case "s":
+          window.location.href = "./files/shorts.html";
+          break;
+        case "b":
+          window.location.href = "./files/start.html";
+          break;
+        case "h":
+          window.location.href = "index.html";
+          break;
+        default:
+          console.log("No action defined for A +", event.key);
+      }
+
+      // Reset the 'A' key state
+      isAPressed = false;
     }
-    if (a.key === "l") {
-      window.location.href = "./files/learn.html"
+  });
+
+  // Reset the 'A' key state if the user releases the key
+  document.addEventListener("keyup", function (event) {
+    if (event.key === "a" || event.key === "A") {
+      isAPressed = false;
+      console.log("A key released");
     }
-    if (a.key === "n") {
-      window.location.href = "./files/note.html"
-    }
-    if (a.key === "s") {
-      window.location.href = "./files/shorts.html"
-    }
-    if (a.key === "b") {
-      window.location.href = "./files/start.html"
-    }
-    if (a.key === "h") {
-      window.location.href = "index.html"
-    }
-  })
+  });
 </script>
 
 </html>

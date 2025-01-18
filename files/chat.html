@@ -202,29 +202,40 @@
         // تحديث الرسائل كل 5 ثوانٍ
         setInterval(fetchMessages, 5000);
 
-        document.addEventListener("keydown", function (a) {
-        if (a.key === "w") {
-            window.location.href = "/files/home.html"
-        }
-        if (a.key === "c") {
-            window.location.href = "/files/chat.html"
-        }
-        if (a.key === "l") {
-            window.location.href = "/files/learn.html"
-        }
-        if (a.key === "n") {
-            window.location.href = "/files/note.html"
-        }
-        if (a.key === "s") {
-            window.location.href = "/files/shorts.html"
-        }
-        if (a.key === "b") {
-            window.location.href = "/files/start.html"
-        }
-        if (a.key === "h") {
-            window.location.href = "/index.html"
-        }
-    })
+        let isAPressed = false;
+
+document.addEventListener("keydown", function (event) {
+    console.log("Key pressed:", event.key); // Debugging: Log the key pressed
+
+    // Check if 'A' is pressed
+    if (event.key === "a" || event.key === "A") {
+        isAPressed = true;
+        console.log("A key pressed"); // Debugging: Confirm 'A' is pressed
+        return; // Exit early to wait for the next key
+    }
+
+    // If 'A' is pressed, check for the 'H' key
+    if (isAPressed && (event.key === "h" || event.key === "H")) {
+        console.log("A + H pressed"); // Debugging: Confirm 'A + H' is pressed
+
+        // Prevent default behavior
+        event.preventDefault();
+
+        // Redirect to the desired page
+        window.location.href = "../index.html";
+
+        // Reset the 'A' key state
+        isAPressed = false;
+    }
+});
+
+// Reset the 'A' key state if the user releases the key
+document.addEventListener("keyup", function (event) {
+    if (event.key === "a" || event.key === "A") {
+        isAPressed = false;
+        console.log("A key released"); // Debugging: Confirm 'A' is released
+    }
+});
     </script>
 </body>
 

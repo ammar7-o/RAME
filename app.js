@@ -34,24 +34,7 @@ if (settings && settings_bar) {
     });
 }
 
-// Change header background color to a random RGB value
 
-colors.addEventListener("click", function ran() {
-
-    header.style.backgroundColor = randomInt();
-    side.style.backgroundColor = randomInt();
-    frame.style.backgroundColor = randomInt();
-    section.style.backgroundColor = frame.style.backgroundColor;
-});
-
-
-rest.addEventListener("click", function () {
-
-    header.style.backgroundColor = 'black';
-    side.style.backgroundColor = '#1E3E62';
-    frame.style.backgroundColor = '#0B192C';
-    section.style.backgroundColor ='#0B192C';
-});
 close.addEventListener("click", function () {
     settings_bar.classList.remove("open");
 });

@@ -213,12 +213,18 @@ body {
     input {
         width: 90%;
         height: 100%;
+        background-color: #1E3E62;
+        border: #bb86fc 2px solid;
+        color: white;
+        border-right: none;
     }
 
     button {
         width: 10%;
         height: 100%;
-
+        background-color: #1E3E62;
+        border: #bb86fc 2px solid;
+        color: white;
     }
 }
 
