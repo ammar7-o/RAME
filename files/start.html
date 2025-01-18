@@ -148,6 +148,31 @@
             localStorage.removeItem('backgroundImage');
             imageUploader.value = '';
         });
+
+
+        document.addEventListener("keydown", function (a) {
+        if (a.key === "w") {
+            window.location.href = "/files/home.html"
+        }
+        if (a.key === "c") {
+            window.location.href = "/files/chat.html"
+        }
+        if (a.key === "l") {
+            window.location.href = "/files/learn.html"
+        }
+        if (a.key === "n") {
+            window.location.href = "/files/note.html"
+        }
+        if (a.key === "s") {
+            window.location.href = "/files/shorts.html"
+        }
+        if (a.key === "b") {
+            window.location.href = "/files/start.html"
+        }
+        if (a.key === "h") {
+            window.location.href = "/index.html"
+        }
+    })
     </script>
 </body>
 

@@ -18,115 +18,73 @@
 
     body {
       width: 100%;
-      height: 100%;
+      min-height: 100vh;
+      background-color: #121212; /* Dark background */
+      color: #e0e0e0; /* Light text */
       user-select: none;
     }
 
     h2 {
       font-size: 25px;
+      color: #bb86fc; /* Purple accent color */
+      margin: 20px 0;
+      letter-spacing: 2px;
     }
 
     .container {
       width: 100%;
-      height: 100%;
       display: flex;
-      gap: 10px;
+      gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
-      text-align: center;
       padding: 10px;
-
-      a {
-        width: 270px;
-        height: 50px;
-        background-color: rgb(189, 189, 189);
-        text-decoration: none;
-        font-size: 30px;
-        font-family: "Poetsen One", sans-serif;
-        gap: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 7px;
-      }
-
-      a:hover {
-        transform: scale(1.03);
-        border: white 2px solid ;
-      }
-
-      img {
-        width: 30px;
-      }
     }
 
-    ::-webkit-scrollbar {
-      width: 20px;
-    }
-
-  
-
-    h1 {
-      color: white;
-      background-color: #000000;
-    }
-
-    .search {
+    .container a {
+      width: 270px;
+      height: 60px;
+      background-color: #1e1e1e; /* Dark container background */
+      text-decoration: none;
+      font-size: 20px;
+      color: #e0e0e0; /* Light text */
       display: flex;
-      justify-content: center;
       align-items: center;
-      position: fixed;
-      z-index: 7;
+      justify-content: flex-start;
+      border-radius: 10px;
+      padding: 0 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    #fix {
-      position: fixed;
-      width: 100%;
+    .container a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border: 2px solid #bb86fc; /* Purple accent border */
     }
 
-    input[type=text] {
-      width: 85%;
-      background-color: rgb(49, 49, 49);
-      border-radius: 7px;
-      border: 1px solid blue;
-      color: white;
-      padding: 10px;
-      font-size: 16px;
-      font-family: sans-serif;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      font-family: sans-serif;
-      font-weight: bolder;
-      letter-spacing: 1px;
-      border-radius: 4px;
-
-    }
-
-    button::placeholder {
-      color: aliceblue;
-    }
-
-    h2 {
-      color: white;
-      letter-spacing: 2px;
+    .container img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
     }
 
     ::-webkit-scrollbar {
-      width: 20px;
-      background-color: white;
-      color: black;
+      width: 10px;
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: black;
-
+      background-color: #bb86fc; /* Purple accent color */
+      border-radius: 5px;
     }
-    @media (max-width: 1000px) {
-      h2{
-        color: black;
+
+    ::-webkit-scrollbar-track {
+      background-color: #1e1e1e; /* Dark container background */
+    }
+
+    @media (max-width: 768px) {
+      .container a {
+        width: 100%;
+        max-width: 300px;
       }
     }
   </style>
@@ -134,116 +92,282 @@
 
 <body>
 
-  <br>
-  
-  
   <h2>GOOGLE</h2>
   <div class="container">
-    <a target="_blank" href="https://drive.google.com/drive/my-drive"><span><img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png"></span>DRIVE</a>
-    <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox"><span><img
-          src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png"></span>gmail</a>
-    <a target="_blank" href="https://translate.google.com/"><span><img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png"></span>translate</a>
-    <a target="_blank" href="https://www.blogger.com"><span><img
-          src="https://cdn.freebiesupply.com/images/large/2x/blogger-logo-transparent.png"></span>blogger</a>
-    <a target="_blank" href="https://www.youtube.com/"><span><img
-          src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></span>youtube</a>
-    <a target="_blank" href="https://keep.google.com/"><span><img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png"></span>keep</a>
-    <a target="_blank" href="https://www.office.com/?auth=1"><span><img
-          src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png" alt=""></span>Office</a>
-    <a target="_blank" href="https://photos.google.com/"><span><img
-          src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png"></span>photos</a>
-    <a target="_blank" href="https://sites.google.com/u/0/new?pli=1&authuser=0"><span><img src=""></span>SITES</a>
-    <a target="_blank" href="https://gemini.google.com/u/1/app"><span><img src=""></span>Gemini</a>
-    <a target="_blank" href="https://calendar.google.com/calendar/u/0/r?pli=1"><span><img src=""></span>calendar</a>
-    <a target="_blank" href="https://about.google/products/#all-products"><span><img src=""></span>MORE</a>
-
-
+    <a target="_blank" href="https://drive.google.com/drive/my-drive">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive">
+      DRIVE
+    </a>
+    <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox">
+      <img src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png" alt="Gmail">
+      Gmail
+    </a>
+    <a target="_blank" href="https://translate.google.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png" alt="Google Translate">
+      Translate
+    </a>
+    <a target="_blank" href="https://www.blogger.com">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/blogger-logo-transparent.png" alt="Blogger">
+      Blogger
+    </a>
+    <a target="_blank" href="https://www.youtube.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">
+      YouTube
+    </a>
+    <a target="_blank" href="https://keep.google.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/1200px-Google_Keep_icon_%282020%29.svg.png" alt="Google Keep">
+      Keep
+    </a>
+    <a target="_blank" href="https://www.office.com/?auth=1">
+      <img src="https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png" alt="Microsoft Office">
+      Office
+    </a>
+    <a target="_blank" href="https://photos.google.com/">
+      <img src="https://1000logos.net/wp-content/uploads/2020/05/Google-Photos-logo.png" alt="Google Photos">
+      Photos
+    </a>
+    <a target="_blank" href="https://sites.google.com/u/0/new?pli=1&authuser=0">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Google_Sites_2020_Logo.svg/1200px-Google_Sites_2020_Logo.svg.png" alt="Google Sites">
+      Sites
+    </a>
+    <a target="_blank" href="https://gemini.google.com/u/1/app">
+      <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini">
+      Gemini
+    </a>
+    <a target="_blank" href="https://calendar.google.com/calendar/u/0/r?pli=1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar">
+      Calendar
+    </a>
+    <a target="_blank" href="https://about.google/products/#all-products">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Products">
+      More
+    </a>
   </div>
-
 
   <h2>MONTAGE</h2>
   <div class="container">
-    <a target="_blank" href="https://www.canva.com/"><span><img src=""></span>canva</a>
-    <a target="_blank" href="https://www.photopea.com/?utm_source=homescreen"><span><img src=""></span>photopea</a>
-    <a target="_blank" href="https://clipchamp.com/en/"><span><img src=""></span>clipchamp</a>
-    <a target="_blank" href="https://app.simplified.com/video"><span><img src=""></span>simplified</a>
-    <a target="_blank" href="https://bith.tv/ai-studio/videos"><span><img src=""></span>Bith</a>
-
-
+    <a target="_blank" href="https://www.canva.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_Logo.png" alt="Canva">
+      Canva
+    </a>
+    <a target="_blank" href="https://www.photopea.com/?utm_source=homescreen">
+      <img src="https://www.photopea.com/promo/icon512.png" alt="Photopea">
+      Photopea
+    </a>
+    <a target="_blank" href="https://clipchamp.com/en/">
+      <img src="https://clipchamp.com/static/favicon-32x32.png" alt="Clipchamp">
+      Clipchamp
+    </a>
+    <a target="_blank" href="https://app.simplified.com/video">
+      <img src="https://app.simplified.com/favicon.ico" alt="Simplified">
+      Simplified
+    </a>
+    <a target="_blank" href="https://bith.tv/ai-studio/videos">
+      <img src="https://bith.tv/favicon.ico" alt="Bith">
+      Bith
+    </a>
   </div>
 
   <h2>AI</h2>
   <div class="container">
-    <a target="_blank" href="https://chatgpt.com/"><span><img src=""></span>chatgpt</a>
-    <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>Copilot</a>
-    <a target="_blank" href="https://app.leonardo.ai/"><span><img src=""></span>leonardo</a>
-    <a target="_blank" href="https://haiper.ai/creations"><span><img src=""></span>Haiper</a>
-    <a target="_blank" href="https://www.stablevideo.com/generate/"><span><img src=""></span>stablevideo</a>
-    <a target="_blank" href="https://perchance.org/ai-text-to-image-generator"><span><img src=""></span>perchance</a>
-    <a target="_blank" href="https://elevenlabs.io/"><span><img src=""></span>elevenlabs</a>
-
+    <a target="_blank" href="https://chatgpt.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
+      ChatGPT
+    </a>
+    <a target="_blank" href="https://copilot.microsoft.com/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Microsoft_Copilot_icon.svg" alt="Copilot">
+      Copilot
+    </a>
+    <a target="_blank" href="https://app.leonardo.ai/">
+      <img src="https://app.leonardo.ai/favicon.ico" alt="Leonardo">
+      Leonardo
+    </a>
+    <a target="_blank" href="https://haiper.ai/creations">
+      <img src="https://haiper.ai/favicon.ico" alt="Haiper">
+      Haiper
+    </a>
+    <a target="_blank" href="https://www.stablevideo.com/generate/">
+      <img src="https://www.stablevideo.com/favicon.ico" alt="Stable Video">
+      Stable Video
+    </a>
+    <a target="_blank" href="https://perchance.org/ai-text-to-image-generator">
+      <img src="https://perchance.org/favicon.ico" alt="Perchance">
+      Perchance
+    </a>
+    <a target="_blank" href="https://elevenlabs.io/">
+      <img src="https://elevenlabs.io/favicon.ico" alt="ElevenLabs">
+      ElevenLabs
+    </a>
   </div>
 
   <h2>UI-UX</h2>
   <div class="container">
-    <a target="_blank"
-      href="https://www.figma.com/board/BW0VwPe6OGDlUWL9GNjFBK/Untitled?node-id=1-80&node-type=shape_with_text&t=EHKG5UZX8UOendJp-0"><span><img
-          src=""></span>Figma</a>
+    <a target="_blank" href="https://www.figma.com/board/BW0VwPe6OGDlUWL9GNjFBK/Untitled?node-id=1-80&node-type=shape_with_text&t=EHKG5UZX8UOendJp-0">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+      Figma
+    </a>
+    <a target="_blank" href="https://www.adobe.com/products/xd.html">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg" alt="Adobe XD">
+      Adobe XD
+    </a>
+    <a target="_blank" href="https://www.invisionapp.com/">
+      <img src="https://www.invisionapp.com/favicon.ico" alt="InVision">
+      InVision
+    </a>
+    <a target="_blank" href="https://www.sketch.com/">
+      <img src="https://www.sketch.com/favicon.ico" alt="Sketch">
+      Sketch
+    </a>
+    <a target="_blank" href="https://www.framer.com/">
+      <img src="https://www.framer.com/favicon.ico" alt="Framer">
+      Framer
+    </a>
   </div>
 
   <h2>MEDIA</h2>
   <div class="container">
-    <a target="_blank" href="https://www.freepik.com/"><span><img src=""></span>freepik</a>
-    <a target="_blank" href="https://pixabay.com/"><span><img src=""></span>pixabay</a>
-    <a target="_blank" href="https://mixkit.co/"><span><img src=""></span>mixkit</a>
-    <a target="_blank" href="https://www.pexels.com/"><span><img src=""></span>pexels</a>
-    <a target="_blank" href="https://www.flaticon.com/"><span><img src=""></span>flaticon</a>
-    <a target="_blank" href="https://www.pinterest.com/"><span><img src=""></span>pinterest</a>
-
+    <a target="_blank" href="https://www.freepik.com/">
+      <img src="https://www.freepik.com/favicon.ico" alt="Freepik">
+      Freepik
+    </a>
+    <a target="_blank" href="https://pixabay.com/">
+      <img src="https://pixabay.com/favicon.ico" alt="Pixabay">
+      Pixabay
+    </a>
+    <a target="_blank" href="https://mixkit.co/">
+      <img src="https://mixkit.co/favicon.ico" alt="Mixkit">
+      Mixkit
+    </a>
+    <a target="_blank" href="https://www.pexels.com/">
+      <img src="https://www.pexels.com/favicon.ico" alt="Pexels">
+      Pexels
+    </a>
+    <a target="_blank" href="https://www.flaticon.com/">
+      <img src="https://www.flaticon.com/favicon.ico" alt="Flaticon">
+      Flaticon
+    </a>
+    <a target="_blank" href="https://www.pinterest.com/">
+      <img src="https://www.pinterest.com/favicon.ico" alt="Pinterest">
+      Pinterest
+    </a>
   </div>
 
   <h2>TOOLS</h2>
   <div class="container">
-    <a target="_blank" href="https://github.com/"><span><img src=""></span>github</a>
-    <a target="_blank" href="https://webflow.com/"><span><img src=""></span>webflow</a>
-    <a target="_blank" href="https://copilot.microsoft.com/"><span><img src=""></span>copilot</a>
-    <a target="_blank" href="https://www.notion.so/f2ac02d7906e45f7b8d00f20720ab367"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/1024px-Notion-logo.svg.png"></span>NOTION</a>
-    <a target="_blank" href="https://web.whatsapp.com/"><span><img src=""></span>whatsapp</a>
-    <a target="_blank" href="https://temp-mail.org/en/"><span><img src=""></span>Temp-mail</a>
-    <a target="_blank" href="https://ammar7-o.github.io/runer/"><span><img src=""></span>Code Editor</a>
-    <a target="_blank" href="https://www.virustotal.com/gui/home/upload"><span><img src=""></span>virustotal</a>
-
+    <a target="_blank" href="https://github.com/">
+      <img src="https://github.com/favicon.ico" alt="GitHub">
+      GitHub
+    </a>
+    <a target="_blank" href="https://webflow.com/">
+      <img src="https://webflow.com/favicon.ico" alt="Webflow">
+      Webflow
+    </a>
+    <a target="_blank" href="https://copilot.microsoft.com/">
+      <img src="https://copilot.microsoft.com/favicon.ico" alt="Copilot">
+      Copilot
+    </a>
+    <a target="_blank" href="https://www.notion.so/f2ac02d7906e45f7b8d00f20720ab367">
+      <img src="https://www.notion.so/favicon.ico" alt="Notion">
+      Notion
+    </a>
+    <a target="_blank" href="https://web.whatsapp.com/">
+      <img src="https://web.whatsapp.com/favicon.ico" alt="WhatsApp">
+      WhatsApp
+    </a>
+    <a target="_blank" href="https://temp-mail.org/en/">
+      <img src="https://temp-mail.org/favicon.ico" alt="Temp Mail">
+      Temp Mail
+    </a>
+    <a target="_blank" href="https://ammar7-o.github.io/runer/">
+      <img src="https://ammar7-o.github.io/runer/favicon.ico" alt="Code Editor">
+      Code Editor
+    </a>
+    <a target="_blank" href="https://www.virustotal.com/gui/home/upload">
+      <img src="https://www.virustotal.com/favicon.ico" alt="VirusTotal">
+      VirusTotal
+    </a>
   </div>
 
   <h2>CSS</h2>
   <div class="container">
-    <a target="_blank" href="https://markodenic.com/tools/buttons-generator/"><span><img src=""></span>Button
-      Generator</a>
-    <a target="_blank" href="https://neumorphism.io/#e0e0e0"><span><img src=""></span>neumorphism</a>
-    <a target="_blank" href="https://cssgrid-generator.netlify.app/"><span><img src=""></span>cssgrid-generator</a>
-    <a target="_blank" href="https://getwaves.io/"><span><img src=""></span>getwaves</a>
-    <a target="_blank" href="https://9elements.github.io/fancy-border-radius/#39.80.57.44--."><span><img
-          src=""></span>fancy</a>
-    <a target="_blank" href="https://css.glass/"><span><img src=""></span>css.glass</a>
-    <a target="_blank" href="https://animista.net/"><span><img src=""></span>animista</a>
-    <a target="_blank" href="https://www.buttons.cool/"><span><img src=""></span>buttons.cool</a>
-    <a target="_blank" href="https://colorhunt.co/"><span><img src=""></span>colorhunt</a>
-    <a target="_blank" href="https://codingartistweb.com/tools/gradient/"><span><img src=""></span>gradient</a>
-    <a target="_blank" href="https://arbfonts.com/top-arabic-fonts"><span><img src=""></span>Arab-fonts</a>
+    <a target="_blank" href="https://markodenic.com/tools/buttons-generator/">
+      <img src="https://markodenic.com/favicon.ico" alt="Button Generator">
+      Button Generator
+    </a>
+    <a target="_blank" href="https://neumorphism.io/#e0e0e0">
+      <img src="https://neumorphism.io/favicon.ico" alt="Neumorphism">
+      Neumorphism
+    </a>
+    <a target="_blank" href="https://cssgrid-generator.netlify.app/">
+      <img src="https://cssgrid-generator.netlify.app/favicon.ico" alt="CSS Grid Generator">
+      CSS Grid Generator
+    </a>
+    <a target="_blank" href="https://getwaves.io/">
+      <img src="https://getwaves.io/favicon.ico" alt="Get Waves">
+      Get Waves
+    </a>
+    <a target="_blank" href="https://9elements.github.io/fancy-border-radius/#39.80.57.44--.">
+      <img src="https://9elements.github.io/fancy-border-radius/favicon.ico" alt="Fancy Border Radius">
+      Fancy Border Radius
+    </a>
+    <a target="_blank" href="https://css.glass/">
+      <img src="https://css.glass/favicon.ico" alt="CSS Glass">
+      CSS Glass
+    </a>
+    <a target="_blank" href="https://animista.net/">
+      <img src="https://animista.net/favicon.ico" alt="Animista">
+      Animista
+    </a>
+    <a target="_blank" href="https://www.buttons.cool/">
+      <img src="https://www.buttons.cool/favicon.ico" alt="Buttons Cool">
+      Buttons Cool
+    </a>
+    <a target="_blank" href="https://colorhunt.co/">
+      <img src="https://colorhunt.co/favicon.ico" alt="Color Hunt">
+      Color Hunt
+    </a>
+    <a target="_blank" href="https://codingartistweb.com/tools/gradient/">
+      <img src="https://codingartistweb.com/favicon.ico" alt="Gradient Generator">
+      Gradient Generator
+    </a>
+    <a target="_blank" href="https://arbfonts.com/top-arabic-fonts">
+      <img src="https://arbfonts.com/favicon.ico" alt="Arab Fonts">
+      Arab Fonts
+    </a>
+    <a target="_blank" href="https://codingartistweb.com/tools/random-hex/">
+      <img src="https://codingartistweb.com/favicon.ico" alt="Random Color">
+      Random Color
+    </a>
+    <a target="_blank" href="https://codingartistweb.com/tools/random-gradient/">
+      <img src="https://codingartistweb.com/favicon.ico" alt="Random Gradient">
+      Random Gradient
+    </a>
+    <a target="_blank" href="https://codingartistweb.com/tools/rgb-hex/">
+      <img src="https://codingartistweb.com/favicon.ico" alt="Hex to RGB">
+     
 
-  </div>
-
-  <h2>Education</h2>
-  <div class="container">
-    <a target="_blank" href="https://massarservice.men.gov.ma/moutamadris/Account"><span><img src=""></span>Massar</a>
-    <a target="_blank" href="https://www.alloschool.com/"><span><img src=""></span>alloschool</a>
-    <a target="_blank" href="https://www.edraak.org/"><span><img src=""></span>edraak</a>
-    <a target="_blank" href="https://www.coursat.org/"><span><img src=""></span>coursat</a>
-  </div>
- 
-</body>
-
-</html>
+      <script>
+         document.addEventListener("keydown", function (a) {
+        if (a.key === "w") {
+            window.location.href = "/files/home.html"
+        }
+        if (a.key === "c") {
+            window.location.href = "/files/chat.html"
+        }
+        if (a.key === "l") {
+            window.location.href = "/files/learn.html"
+        }
+        if (a.key === "n") {
+            window.location.href = "/files/note.html"
+        }
+        if (a.key === "s") {
+            window.location.href = "/files/shorts.html"
+        }
+        if (a.key === "b") {
+            window.location.href = "/files/start.html"
+        }
+        if (a.key === "h") {
+            window.location.href = "/index.html"
+        }
+    })
+      </script>

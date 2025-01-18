@@ -8,7 +8,6 @@ const frame = document.querySelector(".frame"); // First element with class 'col
 const section = document.getElementsByTagName("section")[0]; // Access the first header element
 const close = document.getElementById("close");
 const rest = document.querySelector(".rest"); // First element with class 'colors'
-const light = document.querySelector(".light"); // First element with class 'colors'
 
 // Toggle the side menu
 btn.addEventListener("click", function () {
@@ -45,13 +44,7 @@ colors.addEventListener("click", function ran() {
     section.style.backgroundColor = frame.style.backgroundColor;
 });
 
-light.addEventListener("click", function light() {
 
-    header.style.backgroundColor = '#4b4b4b';
-    side.style.backgroundColor = '#333333';
-    frame.style.backgroundColor = '#969696';
-    section.style.backgroundColor = '#969696';
-});
 rest.addEventListener("click", function () {
 
     header.style.backgroundColor = 'black';

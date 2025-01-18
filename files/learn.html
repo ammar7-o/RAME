@@ -4,12 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>learn</title>
+    <title>Learn</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
+        /* CSS Variables for Dark Mode */
+        :root {
+            --background-color: #121212; /* Dark background */
+            --card-background: #1e1e1e; /* Dark card background */
+            --text-color: #e0e0e0; /* Light text */
+            --accent-color: #bb86fc; /* Purple accent */
+            --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Dark hover shadow */
+            --border-color: #333; /* Dark border */
+        }
+
         body {
-            width: 100% ;
+            width: 100%;
+            min-height: 100vh;
             display: flex;
             padding: 20px;
             flex-wrap: wrap;
@@ -17,124 +28,148 @@
             align-items: center;
             gap: 30px;
             user-select: none;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: "Poetsen One", sans-serif;
         }
 
         .card {
             width: 250px;
             height: 300px;
-            background-color: white;
+            background-color: var(--card-background);
             text-align: center;
-            font-family: "Poetsen One", sans-serif;
-            border-radius: 7px;
+            border-radius: 10px;
             transition: all 0.5s;
-            margin-right: 40px;
-border: 1px solid black;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .card img {
             width: 95%;
-            border-radius: 7px;
+            border-radius: 10px;
             height: 75%;
+            margin-top: 10px;
+            object-fit: cover;
         }
-.card h2{
-    letter-spacing: 3px;
-}
+
+        .card h2 {
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
         .card:hover {
-            transform: scale(1.04);
-            box-shadow: 1px 2px 3px 2px rgb(155, 155, 155);
+            transform: scale(1.05);
+            box-shadow: var(--hover-shadow);
+            border: 1px solid var(--accent-color);
         }
 
+        /* Scrollbar Styling */
         ::-webkit-scrollbar {
-            width: 20px;
-            background-color: white;
-            color: black;
+            width: 12px;
         }
-      
-        ::-webkit-scrollbar-thumb{
-            background-color: black;
 
+        ::-webkit-scrollbar-track {
+            background-color: var(--card-background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--accent-color);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #9b51e0; /* Lighter purple on hover */
         }
     </style>
 </head>
 
 <body>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/html.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/html.html')" class="card">
         <h2>HTML</h2>
-        <img src="../imgs/html.webp"
-            alt="">
+        <img src="../imgs/html.webp" alt="HTML">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/css.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/css.html')" class="card">
         <h2>CSS</h2>
-        <img src="../imgs/css.svg"
-            alt="">
+        <img src="../imgs/css.svg" alt="CSS">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/js.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/js.html')" class="card">
         <h2>JAVASCRIPT</h2>
-        <img src="../imgs/js.png"
-            alt="">
+        <img src="../imgs/js.png" alt="JavaScript">
     </div>
 
-
-
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/cs50.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/cs50.html')" class="card">
         <h2>CS50</h2>
-        <img src="../imgs/cs50.png"
-            alt="">
+        <img src="../imgs/cs50.png" alt="CS50">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/react.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/react.html')" class="card">
         <h2>React-js</h2>
-        <img src="../imgs/react.png"
-            alt="">
+        <img src="../imgs/react.png" alt="React">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/node.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/node.html')" class="card">
         <h2>Node-js</h2>
-        <img src="../imgs/node.png"
-            alt="">
+        <img src="../imgs/node.png" alt="Node.js">
     </div>
 
-
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/git-githup.html')" class="card">
-        <h2>git-githup</h2>
-        <img src="../imgs/git githup.png"
-            alt="">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/git-githup.html')" class="card">
+        <h2>Git-GitHub</h2>
+        <img src="../imgs/git githup.png" alt="Git and GitHub">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/python.html')" class="card">
-        <h2>python</h2>
-        <img src="../imgs/pythonwebp.webp"
-            alt="">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/python.html')" class="card">
+        <h2>Python</h2>
+        <img src="../imgs/pythonwebp.webp" alt="Python">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/figma.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/figma.html')" class="card">
         <h2>Figma</h2>
-        <img  style="width: 70%; height: 70%;" src="../imgs/figma.png"
-            alt="">
+        <img style="width: 70%; height: 70%;" src="../imgs/figma.png" alt="Figma">
     </div>
 
-
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/scratch.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/scratch.html')" class="card">
         <h2>Scratch</h2>
-        <img src="../imgs/scratch.png"
-            alt="">
+        <img src="../imgs/scratch.png" alt="Scratch">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/photoshop.html')" class="card">
-        <h2>photoshop</h2>
-        <img src="../imgs/photoshop.png"
-            alt="">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/photoshop.html')" class="card">
+        <h2>Photoshop</h2>
+        <img src="../imgs/photoshop.png" alt="Photoshop">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/english.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/english.html')" class="card">
         <h2>ENGLISH</h2>
-        <img src="../imgs/english.png"
-            alt="">
+        <img src="../imgs/english.png" alt="English">
     </div>
-    <div  onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/francais.html')" class="card">
+    <div onclick="redirectToPageInNewTab('https://ammar7-o.github.io/learn/pages/francais.html')" class="card">
         <h2>FRENCH</h2>
-        <img src="../imgs/flag_of_france.png"
-            alt="">
+        <img src="../imgs/flag_of_france.png" alt="French">
     </div>
 
     <script>
         function redirectToPageInNewTab(url) {
             window.open(url, '_blank');
         }
+
+        document.addEventListener("keydown", function (a) {
+        if (a.key === "w") {
+            window.location.href = "/files/home.html"
+        }
+        if (a.key === "c") {
+            window.location.href = "/files/chat.html"
+        }
+        if (a.key === "l") {
+            window.location.href = "/files/learn.html"
+        }
+        if (a.key === "n") {
+            window.location.href = "/files/note.html"
+        }
+        if (a.key === "s") {
+            window.location.href = "/files/shorts.html"
+        }
+        if (a.key === "b") {
+            window.location.href = "/files/start.html"
+        }
+        if (a.key === "h") {
+            window.location.href = "/index.html"
+        }
+    })
     </script>
 </body>
 

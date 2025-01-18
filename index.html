@@ -2,62 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAME</title>
-    <link rel="stylesheet" href="ss.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAME</title>
+  <link rel="stylesheet" href="ss.css">
 </head>
 
 <body>
-    <div class="hres">
-        <h2 style="color: white;">DRAWER</h2>
+  <div class="hres">
+    <h2 style="color: white;">DRAWER</h2>
+  </div>
+  <header class="no-select">
+    <a class="logo" href=""><img src=""></a>
+
+    <form class="search">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <button id="searchButton">Search</button>
+    </form>
+
+    <nav>
+      <a onclick="go('./files/about.html')" href="#">ABOUT</a>
+      <a id="settings" href="#">Settings</a>
+      <a onclick="go('./files/my project.html')" href="#">my projects</a>
+    </nav>
+  </header>
+  <div style="overflow-y: scroll;" class="settings no-select">
+    <img id="close" src="./imgs/close.png">
+    <br>
+    <span style="display: none;">
+      <h2>colors</h2>
+      <span class="colors">random</span>
+      <span class="rest">Rest</span>
+    </span>
+   
+    <h1>Shortcuts</h1>
+    <br>
+    <h3>h = home</h3>
+    <h3>w = WEBSITES</h3>
+    <h3>c = chat</h3>
+    <h3>b = background</h3>
+    <h3>n = note</h3>
+    <h3>l = learn</h3>
+    <h3>s = shorts</h3>
+  </div>
+  <section>
+    <div class="res">
+      <a href="files/home.html">HOME</a>
+      <a href="files/learn.html">lEARN</a>
+      <a href="files/shorts.html">MY SHORTS</a>
+      <a href="files/chat.html">chating</a>
+      <a href="files/note.html">NOTE</a>
     </div>
-    <header class="no-select">
-        <a class="logo" href=""><img src=""></a>
+    <div id="side" class="side-bar no-select">
+      <div id="btn" class="btn"><img src="./imgs/file.png"></div>
+      <a onclick="go('./files/start.html')" href="#">HOME</a>
+      <a onclick="go('./files/home.html')" href="#">WEBSITES</a>
+      <a onclick="go('./files/learn.html')" href="#">lEARN</a>
+      <a onclick="go('./files/shorts.html')" href="#">SHORTS</a>
+      <a onclick="go('./files/chat.html')" href="#">CHATING</a>
+      <a onclick="go('./files/note.html')" href="#">NOTE</a>
+      <a onclick="go('./files/blog.html')" href="#">BLOG</a>
 
-        <form  class="search">
-            <input type="text" id="searchInput" placeholder="Search..." />
-            <button  id="searchButton">Search</button>
-        </form>
-
-        <nav>
-            <a href="">ABOUT</a>
-            <a id="settings" href="#">Settings</a>
-            <a href="">my projects</a>
-        </nav>
-    </header>
-    <div class="settings no-select">
-        <img id="close" src="./imgs/close.png">
-        <br>
-        <h2>colors</h2>
-        <span class="colors">random</span>
-        <span class="light">LIGHT MODE</span>
-        <span class="rest">Rest</span>
     </div>
-    <section>
-        <div class="res">
-            <a href="files/home.html">HOME</a>
-            <a href="files/learn.html">lEARN</a>
-            <a href="files/tools.html">TOOLS</a>
-            <a href="files/shorts.html">MY SHORTS</a>
-            <a href="files/chat.html">chating</a>
-            <a href="files/note.html">NOTE</a>
-        </div>
-        <div id="side" class="side-bar no-select">
-            <div id="btn" class="btn"><img src="./imgs/file.png"></div>
-            <a onclick="go('./files/start.html')" href="#">HOME</a>
-            <a onclick="go('./files/home.html')" href="#">SITES</a>
-            <a onclick="go('./files/learn.html')" href="#">lEARN</a>
-            <a onclick="go('./files/tools.html')" href="#">TOOLS</a>
-            <a onclick="go('./files/shorts.html')" href="#">MY SHORTS</a>
-            <a onclick="go('./files/chat.html')" href="#">chating</a>
-            <a onclick="go('./files/note.html')" href="#">NOTE</a>
-
-        </div>
-        <div class="frame">
-            <iframe src="./files/start.html" id="frame" frameborder="0"></iframe>
-        </div>
-    </section>
+    <div class="frame">
+      <iframe src="./files/start.html" id="frame" frameborder="0"></iframe>
+    </div>
+  </section>
 </body>
 <script src="app.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -93,5 +103,30 @@
     var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
     window.open(googleSearchUrl, "_blank");
   });
+
+  document.addEventListener("keydown", function (a) {
+    if (a.key === "w") {
+      window.location.href = "./files/home.html"
+    }
+    if (a.key === "c") {
+      window.location.href = "./files/chat.html"
+    }
+    if (a.key === "l") {
+      window.location.href = "./files/learn.html"
+    }
+    if (a.key === "n") {
+      window.location.href = "./files/note.html"
+    }
+    if (a.key === "s") {
+      window.location.href = "./files/shorts.html"
+    }
+    if (a.key === "b") {
+      window.location.href = "./files/start.html"
+    }
+    if (a.key === "h") {
+      window.location.href = "index.html"
+    }
+  })
 </script>
+
 </html>

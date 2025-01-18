@@ -45,12 +45,12 @@ body {
         display: flex;
         width: 100%;
         height: 90%;
-        background-color: #0B192C;
+        background-color: #121212;
 
         .side-bar {
             width: 15%;
             height: 100%;
-            background-color: #1E3E62;
+            background-color: #121212;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -79,7 +79,7 @@ body {
                 color: white;
                 font-size: 20px;
                 font-family: sans-serif;
-                background-color: #0B192C;
+                background-color: #1f1d1d;
                 width: 90%;
                 height: 40px;
                 display: flex;
@@ -135,6 +135,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+
 
     img {
         width: 50px;
@@ -199,22 +201,25 @@ body {
 .ff {
     top: 10%;
 }
-.search{
-   
-width: 60%;
-height: 60%;
-display: flex;
-align-items: center;
-justify-content: center;
-input{
-    width: 90%;
-    height: 100%;
-}
-button{
-    width: 10%;
-    height: 100%;
 
-}
+.search {
+
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        width: 90%;
+        height: 100%;
+    }
+
+    button {
+        width: 10%;
+        height: 100%;
+
+    }
 }
 
 @media (max-width: 1000px) {

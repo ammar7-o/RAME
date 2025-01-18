@@ -4,38 +4,59 @@
 <head>
     <title>Website Cards</title>
     <style>
+        /* CSS Variables for Dark Mode */
+        :root {
+            --background-color: #121212;
+            --card-background: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #bb86fc;
+            --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            --border-color: #333;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             user-select: none;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         .card {
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
             margin: 10px;
+            display: inline-block;
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--hover-shadow);
+            border: 1px solid var(--accent-color);
         }
 
         .card h3 {
             margin-top: 0;
             font-size: 18px;
-            color: #333;
+            color: var(--accent-color);
         }
 
         .card a {
             display: block;
             margin-top: 10px;
-            color: #007bff;
+            color: var(--text-color);
             text-decoration: none;
         }
 
         .card a:hover {
-            color: #0056b3;
+            color: var(--accent-color);
         }
 
         .delete-btn {
@@ -49,24 +70,33 @@
             cursor: pointer;
         }
 
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+
         .add-btn {
             display: block;
             margin: 20px auto 0;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: var(--accent-color);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
+        .add-btn:hover {
+            background-color: #9b51e0;
+        }
+
         .add-form {
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
             margin-top: 20px;
+            border: 1px solid var(--border-color);
         }
 
         .add-form input {
@@ -74,12 +104,31 @@
             width: 80%;
             margin: 10px auto;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--border-color);
             border-radius: 5px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .add-form input::placeholder {
+            color: #888;
         }
 
         ::-webkit-scrollbar {
-            width: 0px;
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: var(--card-background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--accent-color);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #9b51e0;
         }
     </style>
 </head>
@@ -95,12 +144,11 @@
     </div>
     <div class="card" id="card-template" style="display: none;">
         <h3 id="card-title">Website Name</h3>
-        <a href="#" id="card-link" target="_blank">Visit Website</a>
+        <a href="" id="card-link" target="_blank">Visit Website</a>
         <button class="delete-btn" onclick="deleteCard(this)">Delete</button>
     </div>
 
     <div id="cards-container"></div>
-
 
     <script>
         var cardsContainer = document.getElementById("cards-container");
@@ -115,13 +163,11 @@
         }
 
         function addWebsite(url, name) {
+            console.log("Adding website:", url, name); // Debugging
             var cardClone = cardTemplate.cloneNode(true);
             cardClone.style.display = "inline-block";
             cardClone.querySelector("#card-title").textContent = name;
             cardClone.querySelector("#card-link").href = url;
-            cardClone.addEventListener("click", function () {
-                window.open(url, "_blank");
-            });
             cardsContainer.appendChild(cardClone);
             saveCards();
         }
@@ -129,13 +175,22 @@
         function addCard() {
             var urlInput = document.getElementById("url-input");
             var nameInput = document.getElementById("name-input");
-            if (urlInput.value && nameInput.value) {
-                addWebsite(urlInput.value, nameInput.value);
+            var url = urlInput.value.trim();
+            var name = nameInput.value.trim();
+
+            if (url && name) {
+                // Automatically add https:// if the URL does not start with http:// or https://
+                if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                    url = "https://" + url;
+                }
+
+                addWebsite(url, name);
                 urlInput.value = "";
                 nameInput.value = "";
                 addForm.style.display = "none";
             }
         }
+
 
         function deleteCard(button) {
             var card = button.parentNode;
@@ -162,36 +217,30 @@
                 }
             }
         }
-        function addWebsite(url, name) {
-            var cardClone = cardTemplate.cloneNode(true);
-            cardClone.style.display = "inline-block";
-            cardClone.querySelector("#card-title").textContent = name;
-            cardClone.querySelector("#card-link").href = url;
-            cardClone.addEventListener("click", function (event) {
-                // منع السلوك الافتراضي للرابط
-                event.preventDefault();
-            });
-            cardClone.querySelector(".delete-btn").addEventListener("click", function () {
-                deleteCard(this);
-            });
-            cardsContainer.appendChild(cardClone);
-            saveCards();
-        }
 
-        function addWebsite(url, name) {
-            var cardClone = cardTemplate.cloneNode(true);
-            cardClone.style.display = "inline-block";
-            cardClone.querySelector("#card-title").textContent = name;
-            cardClone.querySelector("#card-link").href = url;
-            cardClone.querySelector("#card-link").addEventListener("click", function () {
-                window.open(url, "_blank");
-            });
-            cardClone.querySelector(".delete-btn").addEventListener("click", function () {
-                deleteCard(this);
-            });
-            cardsContainer.appendChild(cardClone);
-            saveCards();
+        document.addEventListener("keydown", function (a) {
+        if (a.key === "w") {
+            window.location.href = "/files/home.html"
         }
+        if (a.key === "c") {
+            window.location.href = "/files/chat.html"
+        }
+        if (a.key === "l") {
+            window.location.href = "/files/learn.html"
+        }
+        if (a.key === "n") {
+            window.location.href = "/files/note.html"
+        }
+        if (a.key === "s") {
+            window.location.href = "/files/shorts.html"
+        }
+        if (a.key === "b") {
+            window.location.href = "/files/start.html"
+        }
+        if (a.key === "h") {
+            window.location.href = "/index.html"
+        }
+    })
     </script>
 </body>
 
